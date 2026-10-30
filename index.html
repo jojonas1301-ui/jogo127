@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#03040a" />
+    <meta name="description" content="NEON RIFT — um jogo de arena onde seu único movimento é o dash. Atravesse a horda, faça combos e sobreviva." />
+    <title>NEON RIFT — arcade de arena</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2305060f'/%3E%3Cpath d='M22 6 10 17h6l-2 9 12-12h-6l2-8z' fill='%237df9ff'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <canvas id="game" aria-label="Área do jogo NEON RIFT"></canvas>
+
+    <!-- ========== START ========== -->
+    <div id="screen-start" class="screen">
+      <div class="panel">
+        <p class="eyebrow">arcade de arena · 1 movimento</p>
+        <h1 class="logo">
+          <span class="logo-a">NEON</span><span class="logo-b">RIFT</span>
+        </h1>
+        <p class="tagline">Seu único golpe é o dash.<br />Atravesse a horda antes que ela te alcance.</p>
+
+        <button id="btn-play" class="btn btn-primary" type="button">JOGAR</button>
+
+        <ul class="howto">
+          <li>
+            <span class="key">clique / toque</span>
+            <span class="desc">dash na direção do cursor</span>
+          </li>
+          <li>
+            <span class="key key-pink">atravesse</span>
+            <span class="desc">mate no dash · cada abate recarrega</span>
+          </li>
+          <li>
+            <span class="key key-red">evite</span>
+            <span class="desc">minas vermelhas e tiros</span>
+          </li>
+        </ul>
+
+        <div class="record">
+          <span>RECORDE</span>
+          <strong id="best-start">0</strong>
+        </div>
+        <p class="hint">ESPAÇO joga · M silencia · ESC pausa</p>
+      </div>
+    </div>
+
+    <!-- ========== GAME OVER ========== -->
+    <div id="screen-over" class="screen hidden">
+      <div class="panel">
+        <p class="eyebrow" id="over-eyebrow">run encerrada</p>
+        <h2 class="over-title">FIM DE JOGO</h2>
+        <div class="score-block">
+          <span>PONTOS</span>
+          <strong id="over-score">0</strong>
+          <em id="over-record" class="badge hidden">NOVO RECORDE</em>
+        </div>
+        <div class="stats">
+          <div><span>tempo</span><strong id="over-time">0s</strong></div>
+          <div><span>combo máx</span><strong id="over-combo">x0</strong></div>
+          <div><span>abates</span><strong id="over-kills">0</strong></div>
+          <div><span>dashes</span><strong id="over-dashes">0</strong></div>
+        </div>
+        <button id="btn-retry" class="btn btn-primary" type="button">JOGAR DE NOVO</button>
+        <p class="hint">ESPAÇO ou clique para reiniciar</p>
+      </div>
+    </div>
+
+    <!-- ========== PAUSE ========== -->
+    <div id="screen-pause" class="screen hidden">
+      <div class="panel panel-sm">
+        <h2 class="pause-title">PAUSADO</h2>
+        <div class="row">
+          <button id="btn-resume" class="btn btn-primary" type="button">CONTINUAR</button>
+          <button id="btn-menu" class="btn" type="button">MENU</button>
+        </div>
+        <p class="hint">ESC continua · M silencia</p>
+      </div>
+    </div>
+
+    <div class="tools">
+      <button id="btn-mute" class="tool" type="button" aria-label="Ligar/desligar som" title="Som (M)">
+        <span id="mute-icon">🔊</span>
+      </button>
+      <button id="btn-pause" class="tool" type="button" aria-label="Pausar" title="Pausar (ESC)">
+        <span>II</span>
+      </button>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

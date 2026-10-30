@@ -1,0 +1,14 @@
+{
+  "name": "neon-rift",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "NEON RIFT — jogo arcade 2D de arena: seu único movimento é o dash.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "test": "node tools/smoke.mjs"
+  },
+  "keywords": ["game", "canvas", "arcade", "javascript"],
+  "license": "MIT"
+}
